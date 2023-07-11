@@ -6,6 +6,7 @@
     amazon.aws.ec2_instance:
       name: "public-compute-instance"
       key_name: "teste"
+      region: us-east-1
       vpc_subnet_id: subnet-0afbadb57f78ba020
       instance_type: t2.small
       security_group: sg-0192335cc675e23b3
