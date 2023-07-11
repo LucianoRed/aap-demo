@@ -12,6 +12,6 @@
       security_group: sg-0192335cc675e23b3
       network:
         assign_public_ip: true
-      image_id: ami-026ebd4cfe2c043b2 // rhell
+      image_id: "ami-026ebd4cfe2c043b2" // rhell
       tags:
         Environment: Testing
