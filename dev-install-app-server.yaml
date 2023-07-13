@@ -5,3 +5,7 @@
     ansible.builtin.yum:
       name: httpd
       state: latest
+  - name: Instala PHP
+    ansible.builtin.yum:
+      name: php
+      state: latest  
