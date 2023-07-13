@@ -1,10 +1,10 @@
-- name: Create AWS EC2 Instance
+- name: Cria uma instancia na AWS
   hosts: localhost
   gather_facts: False
   tasks:
-  - name: start an instance with a public IP address
+  - name: Inicia uma instancia com IP Publico
     amazon.aws.ec2_instance:
-      name: "public-compute-instance"
+      name: "{{ nome_instancia }}"
       key_name: "teste"
       region: us-east-1
       vpc_subnet_id: subnet-0afbadb57f78ba020
@@ -14,4 +14,4 @@
         assign_public_ip: true
       image_id: ami-026ebd4cfe2c043b2
       tags:
-        Environment: Testing
+        Environment: RedHatDay
