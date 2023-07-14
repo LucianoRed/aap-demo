@@ -9,6 +9,10 @@
     ansible.builtin.yum:
       name: php
       state: latest  
+  - name: Instala Git
+    ansible.builtin.yum:
+      name: git
+      state: latest        
   - name: Inicia e Habilita HTTP
     ansible.builtin.service:
       name: httpd
