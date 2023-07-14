@@ -1,0 +1,25 @@
+- name: Ajusta grupo de seguranca para abrir HTTP e HTTPS
+  hosts: localhost
+  gather_facts: False
+  tasks:
+  - name: Ajusta regras de firewall
+    amazon.aws.ec2_security_group:
+      name: firewall
+      description: Liberacao HTTP e HTTPS
+      vpc_id: vpc-0a44b7dec2602a3e3
+      region: us-east-1
+      rules:
+        - proto: tcp
+          ports: 443
+          group_name: https
+          cidr_ip:
+            - 0.0.0.0/24
+          group_id:
+            - sg-0192335cc675e23b3
+        - proto: tcp
+          ports: 80
+          group_name: http
+          cidr_ip:
+            - 0.0.0.0/24
+          group_id:
+            - sg-0192335cc675e23b3
