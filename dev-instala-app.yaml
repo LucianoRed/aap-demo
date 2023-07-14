@@ -14,6 +14,6 @@
       version: main
   - name: Copia para docroot
     ansible.posix.synchronize:
-      src: /tmp/phpapp2/*
+      src: /tmp/phpapp2/
       dest: /var/www/html      
       
