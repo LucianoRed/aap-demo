@@ -6,6 +6,7 @@
     amazon.aws.ec2_security_group:
       purge_rules: false
       name: launch-wizard
+      description: "launch-wizard created 2023-07-11T22:11:42.545Z"
       vpc_id: vpc-0a44b7dec2602a3e3
       region: us-east-1
       rules:
