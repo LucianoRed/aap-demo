@@ -16,4 +16,5 @@
     ansible.posix.synchronize:
       src: /tmp/phpapp2/
       dest: /var/www/html      
+    delegate_to: "{{ inventory_hostname }}"      
       
