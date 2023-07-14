@@ -3,6 +3,7 @@
   tasks:
   - name: Create a k8s namespace
     community.okd.k8s:
+      validate_certs:  false
       api_key: "{{ api_key }}"
       host: "{{ host_ocp }}"
       name: redhatday
