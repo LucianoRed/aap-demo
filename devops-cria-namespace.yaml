@@ -1,0 +1,9 @@
+- name: Cria aplicacao no Openshift
+  hosts: localhost
+  tasks:
+  - name: Create a k8s namespace
+    community.okd.k8s:
+      name: redhatday
+      api_version: v1
+      kind: Namespace
+      state: present
