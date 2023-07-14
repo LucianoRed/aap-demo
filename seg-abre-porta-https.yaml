@@ -4,7 +4,7 @@
   tasks:
   - name: Ajusta regras de firewall
     amazon.aws.ec2_security_group:
-      name: firewall
+      group_id: sg-0192335cc675e23b3
       description: Liberacao HTTP e HTTPS
       vpc_id: vpc-0a44b7dec2602a3e3
       region: us-east-1
@@ -13,11 +13,8 @@
           ports: 443
           cidr_ip:
             - 0.0.0.0/24
-          group_id:
-            - sg-0192335cc675e23b3
         - proto: tcp
           ports: 80
           cidr_ip:
             - 0.0.0.0/24
-          group_id:
-            - sg-0192335cc675e23b3
+          
