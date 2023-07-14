@@ -17,5 +17,5 @@
       type: CNAME
       value: "{{ inventory_hostname }}"
       account_email: "{{ email_cloudflare }}"
-      account_api_key: "{{ cloudflare-creds }}"
+      account_api_key: "{{ cloudflare_creds }}"
     register: record
