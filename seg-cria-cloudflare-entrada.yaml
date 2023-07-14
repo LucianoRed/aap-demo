@@ -1,0 +1,12 @@
+- name: Cria entrada DNS Cloudflare
+  hosts: localhost
+  tasks:
+  - name: Cria a entrada para a maquina criada
+    community.general.cloudflare_dns:
+      zone: openshiftdemo.com.br
+      record: redhatday
+      type: CNAME
+      value: "{{ inventory_hostname }}"
+      account_email: "{{ email_cloudflare }}"
+      account_api_key: "{{ cloudflare-creds }}"
+    register: record
