@@ -4,7 +4,8 @@
   tasks:
   - name: Ajusta regras de firewall
     amazon.aws.ec2_security_group:
-      group_id: sg-0192335cc675e23b3
+      purge_rules: false
+      name: launch-wizard
       description: Liberacao HTTP e HTTPS
       vpc_id: vpc-0a44b7dec2602a3e3
       region: us-east-1
