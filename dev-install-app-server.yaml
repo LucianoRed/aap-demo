@@ -9,3 +9,9 @@
     ansible.builtin.yum:
       name: php
       state: latest  
+  - name: Inicia e Habilita HTTP
+    ansible.builtin.service:
+      name: httpd
+      state: started
+      enabled: true
+      
