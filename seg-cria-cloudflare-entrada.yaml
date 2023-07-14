@@ -19,3 +19,7 @@
       account_email: "{{ email_cloudflare }}"
       account_api_key: "{{ cloudflare_creds }}"
     register: record
+
+  - name: Testa entrada
+    degub:
+      var: record
