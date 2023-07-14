@@ -1,0 +1,14 @@
+- name: Cria app usando oc
+  hosts: localhost
+  tasks:
+  - name: Login usando OC
+    shell: "oc login {{ host_ocp }} --token='{{ api_key }}' --insecure-skip-tls-verify=true"
+
+  - name: Cria projeto
+    shell: "oc new-project {{ nome_projeto }}"
+
+  - name: Cria app
+    shell: "oc new-app php~https://github.com/LucianoRed/phpapp2.git -n {{ nome_projeto }}"
+
+  - name: Expoe servico por rota
+    shell: "oc expose service/phpapp2"
