@@ -6,7 +6,7 @@
       repo: https://github.com/LucianoRed/phpapp2.git
       dest: /tmp/phpapp2
       single_branch: yes
-      version: master
+      version: main
   - name: Copia para docroot
     ansible.posix.synchronize:
       src: /tmp/phpapp2/*
