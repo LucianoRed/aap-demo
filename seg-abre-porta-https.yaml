@@ -6,16 +6,15 @@
     amazon.aws.ec2_security_group:
       purge_rules: false
       name: launch-wizard
-      description: Liberacao HTTP e HTTPS
       vpc_id: vpc-0a44b7dec2602a3e3
       region: us-east-1
       rules:
         - proto: tcp
           ports: 443
           cidr_ip:
-            - 0.0.0.0/24
+            - 0.0.0.0/0
         - proto: tcp
           ports: 80
           cidr_ip:
-            - 0.0.0.0/24
+            - 0.0.0.0/0
           
