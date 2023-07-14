@@ -11,14 +11,12 @@
       rules:
         - proto: tcp
           ports: 443
-          group_name: https
           cidr_ip:
             - 0.0.0.0/24
           group_id:
             - sg-0192335cc675e23b3
         - proto: tcp
           ports: 80
-          group_name: http
           cidr_ip:
             - 0.0.0.0/24
           group_id:
