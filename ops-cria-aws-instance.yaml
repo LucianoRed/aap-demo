@@ -17,9 +17,13 @@
         Environment: RedHatDay
     register: ec2_instance
 
+  - name: Debug
+    debug:
+      var: ec2_instance
+      
   - name: Registra ip publico
     set_fact:
-        public_ip: "{{ ec2_instance.instances[0].public_ip }}"
+        public_ip: "{{ ec2_instance.instances[0].public_dns_name }}"
 
   - name: Espera SSH habilitado para seguir
     wait_for:
