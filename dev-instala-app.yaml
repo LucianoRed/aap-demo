@@ -1,0 +1,14 @@
+- name: Instala pacotes 
+  hosts: all
+  tasks:
+  - name: Clona diretorio app
+    ansible.builtin.git:
+      repo: https://github.com/LucianoRed/phpapp2.git
+      dest: /tmp
+      single_branch: yes
+      version: master
+  - name: Copia para docroot
+    ansible.posix.synchronize:
+      src: /tmp/phpapp2/*
+      dest: /var/www/html      
+      
