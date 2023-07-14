@@ -15,3 +15,21 @@
       image_id: ami-026ebd4cfe2c043b2
       tags:
         Environment: RedHatDay
+    register: ec2_instance
+
+  - name: Registra ip publico
+    set_fact:
+        public_ip: "{{ ec2_instance.instances[0].public_ip }}"
+
+  - name: Espera SSH habilitado para seguir
+    wait_for:
+        host: "{{ public_ip }}"
+        port: 22
+        delay: 5
+        timeout: 300
+        state: started
+
+  - name: Registra variavel global
+    ansible.builtin.set_stats:
+      data:
+        public_ip_global: "{{ public_ip }}"     
